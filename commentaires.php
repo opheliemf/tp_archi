@@ -10,12 +10,12 @@
 			<input type="submit" value="Envoyer" name="envoyer">
 		</form>
 		<?php
-			$lien=mysqli_connect("localhost","root","root","tp");
+			$lien=mysqli_connect("localhost","root","","archi");
 			if(isset($_POST['envoyer']))
 			{
 				$nom=trim(htmlentities(mysqli_real_escape_string($lien,$_POST['nom'])));
 				$contenu=trim(htmlentities(mysqli_real_escape_string($lien,$_POST['contenu'])));
-				$req="INSERT INTO comment VALUES (NULL,'$nom','$contenu')";
+				$req="INSERT INTO comment VALUES (NULL, '$nom','$contenu')";
 				$res=mysqli_query($lien,$req);
 				if(!$res)
 				{
@@ -33,7 +33,7 @@
 			}
 			$commparpage=3;
 			$premiercomm=$commparpage*($page-1);
-			$req="SELECT * FROM comment ORDER BY id LIMIT $premiercomm,$commparpage";/* LIMIT dit ou je commence et combien j'en prends*/
+			$req="SELECT * FROM comment ORDER BY idc LIMIT $premiercomm,$commparpage";/* LIMIT dit ou je commence et combien j'en prends*/
 			$res=mysqli_query($lien,$req);
 			if(!$res)
 			{
@@ -56,12 +56,12 @@
 			}
 			else
 			{
-				$nbcomm=mysqli_num_rows($res); // Retourne le nombre de lignes dans un résultat. 
-				$nbpages=ceil($nbcomm/$commparpage); /*Ceil arrondit a l'entier supérieur*/
+				$nbcomm=mysqli_num_rows($res); // Retourne le nombre de lignes dans un rï¿½sultat. 
+				$nbpages=ceil($nbcomm/$commparpage); /*Ceil arrondit a l'entier supï¿½rieur*/
 				echo "<br> Pages : ";
 				echo "<a href='commentaires.php?page=1'> << </a>";
 				echo "<a href='commentaires.php?page=".($page-1)."'> < </a>";
-				for($i=($page-2);$i<=($page+2);$i++)
+				for($i=($page-2);$i<=($page+2);$i++) /*mettre un if dans le for */
 				{
 					echo "<a href='commentaires.php?page=$i'> $i </a>";
 				}
@@ -70,4 +70,6 @@
 			echo "<a href='commentaires.php?page=$nbpages'> >> </a>";
 			
 			mysqli_close($lien);
-		?>																			
+		?>
+        </body>
+</html>	
