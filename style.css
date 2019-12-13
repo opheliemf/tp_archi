@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section{
+    background-color: rgba(218, 218, 218, 0.8);
+    width: calc(100% - 200px);
+    margin: 40px;
+    padding: 60px;
+}
+
+section:last-of-type{
+    background-color: white;
+    padding: 0 40px 40px 40px;
+    min-height: calc(60vh - 90px);
+}
+
+a{
+    text-decoration: none;
+    color: #8072FA;
+}
+
+a:hover{
+    color: #fa8072;
+}
+
+label{
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    width: 20%;
+    margin: 0 0 5px 0;
+}
+
+input{
+    border: none;
+    width: 100%;
+    padding: 5px;
+    margin: 0 0 20px 0;
+}
+
+input[type=submit]{
+    background-color: white;
+    color: salmon;
+    width: 200px;
+    margin: 0 calc(50% - 100px) 0 calc(50% - 100px);
+    border: none;
+    font-weight: bold;
+}
+
+input[type=submit]:active{
+    background: rgb(150, 150, 150);
+    color: white;
+}
+
+textarea{
+    border: none;
+    width: calc(100% + 2px);
+    min-height: 5vh;
+    padding: 5px;
+    margin: 0 0 20px 0;
+}
+
+input:hover:not([type=file]), textarea:hover{
+    box-shadow: rgba(150, 150, 150, 0.5) 4px 4px 0px 0px;
+}
+
+article{
+    background-color: rgba(150, 150, 150, 0.2);
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 20px 0;
+}
+
+h1{
+    color: salmon;
+    text-align: center;
+    margin: 0 0 20px 0;  
+}
+
+h2{
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+h4{
+    text-align: center;
+}
+
+.synop{
+    width: calc(100% + 20px);
+    font-style: italic;
+    margin: 0 0 20px 0;
+}
+
+p{
+    display: block;
+    text-align: justify;
+    text-justify: auto;
+}
+
+.pagination{
+    text-align: center;
+    font-weight: bold;
+}
